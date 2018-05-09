@@ -3,7 +3,8 @@
 2. Clone your fork with the Git command `git clone <url>`
 3. Create development branches (as many as you need) with the commands:  
 
-    ```git branch  
+    ```  
+    git branch  
     git checkout -b <name_of_new_branch>  
     git checkout <name_of_new_branch>```
 
