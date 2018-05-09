@@ -6,7 +6,8 @@
     ```  
     git branch  
     git checkout -b <name_of_new_branch>  
-    git checkout <name_of_new_branch>```
+    git checkout <name_of_new_branch>  
+    ```
 
 4. Edit files in desired branch and check with `git status`
 5. Add the edited files to the staging area with the command `git add .`
