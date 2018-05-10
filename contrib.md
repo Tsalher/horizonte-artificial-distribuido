@@ -15,6 +15,8 @@
 7. Push to GitHub: `Git Push`
 8. When you think the feature is ready to be included in the main project, initiate a pull request.
 
+Please write your code and comments in English.
+
 ## Tip
 Create branches for all your development. Do not commit to the master branch even in your fork. By doing this, you will avoid
 merge conflicts when updating your fork.
