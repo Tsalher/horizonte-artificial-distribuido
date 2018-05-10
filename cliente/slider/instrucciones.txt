@@ -1,0 +1,1 @@
+Hay que sustituir las funciones de client-server en sliders.
