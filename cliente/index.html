@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <title>Horizonte artificial y altímetro</title>
     <link rel="stylesheet" href="./Altimetro/css/altitude.css">
+    <!--Funcion de trabajo-->
     <script src="./Altimetro/javascript/setAltitude.js"></script>
+    <!--WebSockets implementation-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="../E-cssClassandIdSelectors/calculator.js"></script>
   </head>
   <body>
      <!--Cargamos todas las imagenes del altimetro dentro del div "instrument"-->
+<div class="row">
+<div class="col-6">
      <div class="instrument">
         <div>
             <!--Tienen que ser objects para poder modificar sus elementos internos-->
@@ -27,6 +35,30 @@
                 <img alt="decoration" src="./Altimetro/svg/altim_decor.svg"/>
               </div>
       </div>
+</div>
+
+<div class="col-6">
+      <div class="instrument2">
+            <div>
+              <img alt="horizon_back" src="./horizon/img/horizon_back.svg" />
+            </div>
+            <div id="rollWidget">
+              <img id="pitchWidget"
+                alt="horizon_ball"
+                src="./horizon/img/horizon_ball.svg"
+              />
+            </div>
+            <div>
+              <img alt="horizon_circle" src="./horizon/img/horizon_circle.svg" id="rollWidget2"/>
+            </div>
+            <div>
+              <img src="./horizon/img/horizon_mechanics.svg" alt="horizon_mechanics" />
+              <img src="./horizon/img/fi_circle.svg" alt="fi_circle" />
+            </div>
+          </div>
+</div>
+</div>
+
       <br>
       <!--El slider activa la funcion cada vez que se mueve-->
       <div class="slidecontainer">
