@@ -3,7 +3,7 @@ div.instrument {
     display: inline-block;
     overflow: hidden;
     width:100%;
-    padding-bottom:100%
+    padding-bottom:80vh
 }
 
 div.instrument div {
@@ -70,4 +70,36 @@ div.instrument div svg {
     height: 25px;
     background: #111111;
     cursor: pointer;
+}
+
+div.instrument2 {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width:100%;
+    padding-bottom:80vh
+}
+
+div.instrument2 div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 90vh;
+}
+
+div.instrument2 div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+}
+
+div.instrument2 div svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
 }
