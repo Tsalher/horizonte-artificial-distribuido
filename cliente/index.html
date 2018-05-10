@@ -5,6 +5,7 @@
     <title>Horizonte artificial y altímetro</title>
     <link rel="stylesheet" href="./Altimetro/css/altitude.css">
     <script src="./Altimetro/javascript/setAltitude.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
   </head>
   <body>
      <!--Cargamos todas las imagenes del altimetro dentro del div "instrument"-->
@@ -35,6 +36,7 @@
         <button type="button" id="altManual" onclick="setAlt(altValue.value)">Set Manually</button>
       </div>
       <br>
+      <div id="messages"></div>
       
   </body>
 </html>
