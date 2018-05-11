@@ -11,11 +11,44 @@
 
 4. Edit files in desired branch and check with `git status`
 5. Add the edited files to the staging area with the command `git add .`
-6. Commit your changes: `git commit -m "Description of the changes"
-7. Push to GitHub: `Git Push`
+6. Commit your changes: `git commit -m "Description of the changes"`
+7. Push to GitHub: `git Push`
 8. When you think the feature is ready to be included in the main project, initiate a pull request.
 
 Please write your code and comments in English.
+
+## Updating your forked repository
+1. In your repository, register the repository you forked the project from, which is this one. This creates a name for the online repository so you do not have to . This only needs to be done once.
+
+```
+git remote add upstream https://github.com/Tsalher/horizonte-artificial-distribuido
+```
+
+2. Commit your changes to the branch you are working on and checkout the master branch. Committing is not strictly necessary, but sometimes you will not be able to checkout without committing. Git will alert you with a warning. If you ignore the warning and force the checkout without committing, you may lose code!
+
+```
+git add .
+git commit -m "<commit message>"
+git checkout master
+```
+
+3. Fetch the changes from this repository.
+
+```
+git fetch upstream
+```
+
+4. Merge the changes into your master branch.
+```
+git merge upstream/master
+```
+
+5. If you want to incorporate the changes to a development branch (in the example, it is called *devel*, checkout to it and merge with your updated master branch.
+
+```
+git checkout devel
+git merge master
+```
 
 ## Tip
 Create branches for all your development. Do not commit to the master branch even in your fork. By doing this, you will avoid
