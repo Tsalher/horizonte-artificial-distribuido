@@ -18,7 +18,7 @@
 Please write your code and comments in English.
 
 ## Updating your forked repository
-1. In your repository, register the repository you forked the project from, which is this one. This creates a name for the online repository so you do not have to . This only needs to be done once.
+1. In your repository, register the repository you forked the project from, which is this one. This creates a name to refer to the online upstream repository. This only needs to be done once.
 
 ```
 git remote add upstream https://github.com/Tsalher/horizonte-artificial-distribuido
