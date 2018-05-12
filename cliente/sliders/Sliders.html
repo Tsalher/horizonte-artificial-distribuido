@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="sliders.css">
+
+		<script>
+			var socket = new WebSocket('URL del servidor'); // La URL se pone como: "ws://www.example.com/"
+			socket.onopen = () =>{
+   			console.log('conectado');    
+			};
+
+			function sliderChange1(pitch_val) {
+				document.getElementById('pitch').innerHTML = pitch_val;
+				socket.send("{'pitch_val :'" + pitch_val + "}"); 
+			}
+
+			function sliderChange2(roll_val) {
+				document.getElementById('roll').innerHTML = roll_val;
+				socket.send("{'roll_val :'" + roll_val + "}"); 
+			}
+
+			function sliderChange3(altitude_val) {
+				document.getElementById('altitude').innerHTML = altitude_val;
+				socket.send("{'altitude_val :'" + altitude_val + "}");				
+			}
+		</script>
+
+	</head>
+
+	<body>
+	
+
+		<div class="container">
+
+			</br> </br>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="card bg-success">
+						<div class="card-body text-center">
+							<h1 class="card-text">PITCH = <output id="pitch">0</output>º</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			</br>
+
+			<div class="row">
+				<div class="col-12">
+					<input type="range" min="-90" max="90" value="0" class="slider" step="1" onChange="sliderChange1(this.value)" /> 
+				</div>
+			</div>
+
+			</br> </br> </br>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="card bg-info">
+						<div class="card-body text-center">
+							<h1 class="card-text">ROLL = <output id="roll">0</output>º</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			</br>
+	
+			<div class="row">
+				<div class="col-12">
+					<input type="range" min="-90" max="90" value="0" class="slider" step="1" onChange="sliderChange2(this.value)" /> 
+				</div>
+			</div>
+
+		</br> </br> </br>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="card bg-warning">
+					<div class="card-body text-center">
+						<h1 class="card-text">ALTITUDE = <output id="altitude">0</output> ft</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</br>
+
+		<div class="row">
+			<div class="col-12">
+				<input type="range" min="-2000" max="100000" value="0" class="slider" step="1" onChange="sliderChange3(this.value)" /> 
+			</div>
+		</div>
+
+		</div>
+
+	</body>
+
+</html>
