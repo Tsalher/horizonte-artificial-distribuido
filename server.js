@@ -14,3 +14,5 @@ server.listen(8080, function() {
 
             });
   });
+	
+app.use(express.static('cliente'));
