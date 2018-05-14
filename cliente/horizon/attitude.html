@@ -2,16 +2,23 @@
     <head>
         <link rel="stylesheet" href="./attitude.css">
         <script>
-            function setRoll(){
-                var rollVal = document.getElementById("roll").value;
+            //Esto es para definir las funciones para el roll y el pitch
+            function setRoll(roll){
+                //Con esto se rota el aro exterior con las marcas
+                // var rollVal = document.getElementById("roll").value;
                 var rollWid = document.getElementById("rollWidget");
-                rollWid.style.transform = "rotate("+ rollVal +"deg)";
+                rollWid.style.transform = "rotate("+ roll +"deg)";
+                //Con esto se rota el circulo central
                 var rollWid2 = document.getElementById("rollWidget2");
-                rollWid2.style.transform = "rotate("+ rollVal +"deg)";
+                rollWid2.style.transform = "rotate("+ roll +"deg)";
+                //Con esto se rota el fondo
+                var rollWid3 = document.getElementById("rollWidget3");
+                rollWid3.style.transform = "rotate("+ roll +"deg)";
                 
             }
-            function setPitch(){
-                var pitchVal = document.getElementById("pitch").value;
+            function setPitch(pitch){
+                //Con esto se desplaza el circulo central que indica el pitch
+                // var pitchVal = document.getElementById("pitch").value;
                 var pitchWid = document.getElementById("pitchWidget");
                 
                 //Este termino adicional sirve para que marque los grados del pitch correctamente en la imagen
@@ -22,16 +29,50 @@
                 ancho=foto.width;
                 alto=foto.height;
                 //utilizamos las dimensiones del horizonte para movel el pitch
-                pitchWid.style.top = pitchVal*1500/alto;
+                pitchWid.style.top = pitch*1400/alto;
                 
             }
         </script>
+        <script>
+            /*Este script pilla los datos desde la variable messages desde el servidor en el puerto 8080
+                 y lo coloca en una variable que se llama data*/
+                var socket = io.connect('http://localhost:8080', { 'forceNew': true });
+
+                    socket.on('messages', function(data) {
+                    console.log(data);
+                    //render(data);
+                    })
+
+                    var valores = JSON.parse(data);
+                    pitch= valores.pitch_val;
+                    roll= valores.roll_val;
+
+                    setPitch(pitch);
+                    setRoll(roll);
+
+                //Vamos a pillar los parametros dentro de la variable messages que nos pasan por el websocket
+                //Con este calcularmos el Pitch
+                /* if ($(data:contains('pitch_val :')) == true) {
+                    var data = data.split(':');
+                    var pitch = data [2];
+                    var pitch = eval (pitch);
+                } 
+                //Con este calculamos el roll
+                if ($(data:contains('roll_val :')) == true) {
+                    var data = data.split(':');
+                    var roll = data [2];
+                    var roll = eval (roll);
+                }  */
+        </Script>
     </head>
     <body>
         <div class="instrument">
             <div>
               <img alt="horizon_back" src="./img/horizon_back.svg" />
             </div>
+            <div>
+                <img alt="horizon_back" src="./img/horizon_back.svg" id="rollWidget3"/>
+              </div>
             <div id="rollWidget">
               <img id="pitchWidget"
                 alt="horizon_ball"
@@ -55,8 +96,7 @@
           <br>
           <input type="text" id="pitch">
           <input type="button" onclick="setPitch()" value="Set Pitch">
-
-          
+        <div id = "messages">
 
     </body>
 </html>

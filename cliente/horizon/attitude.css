@@ -2,8 +2,8 @@ div.instrument {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width:100%;
-    padding-bottom:90vh
+    width:80vw;
+    padding-bottom:80vh;
 }
 
 div.instrument div {
@@ -11,7 +11,7 @@ div.instrument div {
     top: 0;
     left: 0;
     width: inherit;
-    height: 90vh;
+    height: 80vh;
 }
 
 div.instrument div img {
